@@ -9,17 +9,19 @@ const AVATAR_COLORS = [
 ]
 
 function hashName(name) {
+  if (!name || typeof name !== "string") return 0
   let h = 0
   for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) | 0
   return Math.abs(h)
 }
 
-export default function Avatar({ name, initials, size = "md" }) {
-  const colorClass = AVATAR_COLORS[hashName(name) % AVATAR_COLORS.length]
-  const sizeClass = { sm: "w-8 h-8 text-xs", md: "w-10 h-10 text-sm", lg: "w-12 h-12 text-base" }[size]
+export default function Avatar({ name = "", initials = "W", size = "md" }) {
+  const safeName = String(name || "")
+  const colorClass = AVATAR_COLORS[hashName(safeName) % AVATAR_COLORS.length]
+  const sizeClass = { sm: "w-8 h-8 text-xs", md: "w-10 h-10 text-sm", lg: "w-12 h-12 text-base" }[size] || "w-10 h-10 text-sm"
   return (
     <div className={`${sizeClass} ${colorClass} rounded-full flex items-center justify-center font-bold font-mono shrink-0`}>
-      {initials}
+      {initials || "W"}
     </div>
   )
 }
