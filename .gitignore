@@ -31,3 +31,4 @@ dist-ssr
 *.xlsx
 *.zip
 scratch_*
+.vite
