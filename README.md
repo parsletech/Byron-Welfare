@@ -2,7 +2,7 @@
 
 A production-ready financial tracking dashboard — built with React + Vite + Tailwind CSS.
 
----
+
 
 ## Quick Start
 
@@ -11,30 +11,10 @@ Install **Node.js v18+** from https://nodejs.org (LTS version recommended).
 
 After installing, restart your terminal/PowerShell, then:
 
-```bash
-# 1. Install dependencies
-npm install
 
-# 2. Start dev server (opens at http://localhost:5173)
-npm run dev
-
-# 3. Build for production
-npm run build
-npm run preview
-```
-
----
 
 ## Connect Your Google Sheet
 
-Open `src/config/sheets.js` and paste your Spreadsheet ID:
-
-```js
-export const SPREADSHEET_ID = "YOUR_SPREADSHEET_ID_HERE"
-```
-
-Your Sheet URL looks like:
-`https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID_HERE/edit`
 
 **Important:** Make sure your Google Sheet is shared with:
 - "Anyone with the link" → Viewer access
