@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+  body { @apply bg-porcelain text-charcoal font-sans transition-colors duration-300; }
+  .dark body { @apply bg-obsidian text-titanium; }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-hairline dark:bg-white/10 rounded-full; }
+  .tabular { font-variant-numeric: tabular-nums; }
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-porcelain dark:ring-offset-obsidian;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-chalk dark:bg-graphite border border-hairline dark:border-white/10 rounded-xl;
+  }
+  .card-subtle {
+    @apply bg-slategray dark:bg-white/5 border border-hairline dark:border-white/5 rounded-xl;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-accent text-white font-medium rounded-lg
+           hover:bg-emerald-600 active:scale-95 transition-all duration-150 text-sm;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-2 rounded-lg font-medium text-sm
+           text-charcoal/70 dark:text-titanium/70 hover:bg-slategray dark:hover:bg-white/5
+           active:scale-95 transition-all duration-150;
+  }
+  .pill {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border transition-all duration-150;
+  }
+  .pill-active {
+    @apply pill bg-accent/10 text-accent border-accent/20;
+  }
+  .stat-value {
+    @apply font-mono font-bold tabular text-charcoal dark:text-titanium tracking-tight;
+  }
+  .hairline-top    { @apply border-t border-hairline dark:border-white/10; }
+  .hairline-bottom { @apply border-b border-hairline dark:border-white/10; }
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+.live-dot { animation: livePulse 2s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+.dark .shimmer {
+  background: linear-gradient(90deg, #14181E 25%, #1e2530 50%, #14181E 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
