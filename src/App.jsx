@@ -40,7 +40,7 @@ export default function App() {
   return (
     <>
       <Toaster position="bottom-center" />
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-porcelain dark:bg-obsidian text-charcoal dark:text-titanium transition-colors duration-200">
         <Header
           theme={theme}
           onToggleTheme={toggleTheme}
@@ -48,7 +48,7 @@ export default function App() {
           onChangeCurrency={setCurrency}
           syncProps={{ isLive, isFetching, isError, lastSync, forceSync: handleForceSync }}
         />
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+        <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <HeroMetrics summary={summary} currency={currency} isLoading={isLoading} />
           <LiquidityPanel summary={summary} currency={currency} />
           <MemberDirectory members={members} currency={currency} isLoading={isLoading} />
