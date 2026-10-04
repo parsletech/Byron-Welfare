@@ -32,22 +32,22 @@ export default function HeroMetrics({ summary, currency, isLoading }) {
   return (
     <section className="mb-10 animate-slide-up">
       <div className="mb-2">
-        <p className="text-xs font-medium tracking-widest uppercase text-charcoal/50 dark:text-titanium/40 mb-2">
+        <p className="text-xs font-medium tracking-widest uppercase text-charcoal/40 dark:text-titanium/30 mb-2">
           Total Portfolio Value
         </p>
         {isLoading ? (
-          <div className="shimmer h-12 sm:h-14 w-60 sm:w-64 rounded-xl" />
+          <div className="shimmer h-14 w-64 rounded-xl" />
         ) : (
-          <h1 className="font-mono font-black text-3xl sm:text-5xl lg:text-7xl tabular text-charcoal dark:text-titanium tracking-tight leading-tight">
+          <h1 className="font-mono font-black text-5xl sm:text-6xl lg:text-7xl tabular text-charcoal dark:text-titanium tracking-tight leading-none">
             {formatCurrency(animated, currency)}
           </h1>
         )}
-        <p className="mt-2 text-xs sm:text-sm text-charcoal/50 dark:text-titanium/40 font-mono">
-          {currency === "KES" ? "Kenyan Shillings" : "US Dollars · 1 USD = 130 KES"} · Live Synced
+        <p className="mt-2 text-sm text-charcoal/40 dark:text-titanium/30 font-mono">
+          {currency === "KES" ? "Kenyan Shillings" : "US Dollars · 1 USD = 130 KES"} · As of Oct 2026
         </p>
       </div>
-      <div className="my-5 sm:my-6 hairline-bottom" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className="my-6 hairline-bottom" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {cards.map((card) => (
           <StatCard key={card.label} {...card} isLoading={isLoading} />
         ))}

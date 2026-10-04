@@ -5,7 +5,7 @@
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
   html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
-  body { @apply bg-porcelain text-charcoal font-sans transition-colors duration-300; }
+  body { @apply bg-porcelain text-charcoal font-sans transition-colors duration-500 ease-in-out; }
   .dark body { @apply bg-obsidian text-titanium; }
   ::-webkit-scrollbar { width: 4px; height: 4px; }
   ::-webkit-scrollbar-track { @apply bg-transparent; }
@@ -18,10 +18,10 @@
 
 @layer components {
   .card {
-    @apply bg-chalk dark:bg-graphite border border-hairline dark:border-white/10 rounded-xl;
+    @apply bg-chalk dark:bg-graphite border border-hairline dark:border-white/10 rounded-xl transition-colors duration-500 ease-in-out;
   }
   .card-subtle {
-    @apply bg-slategray dark:bg-white/5 border border-hairline dark:border-white/5 rounded-xl;
+    @apply bg-slategray dark:bg-white/5 border border-hairline dark:border-white/5 rounded-xl transition-colors duration-500 ease-in-out;
   }
   .btn-primary {
     @apply inline-flex items-center gap-2 px-4 py-2 bg-accent text-white font-medium rounded-lg
@@ -41,8 +41,8 @@
   .stat-value {
     @apply font-mono font-bold tabular text-charcoal dark:text-titanium tracking-tight;
   }
-  .hairline-top    { @apply border-t border-hairline dark:border-white/10; }
-  .hairline-bottom { @apply border-b border-hairline dark:border-white/10; }
+  .hairline-top    { @apply border-t border-hairline dark:border-white/10 transition-colors duration-500; }
+  .hairline-bottom { @apply border-b border-hairline dark:border-white/10 transition-colors duration-500; }
 }
 
 @keyframes livePulse {
@@ -61,7 +61,6 @@
   animation: shimmer 1.5s infinite;
 }
 .dark .shimmer {
-  background: linear-gradient(90deg, #14181E 25%, #1e2530 50%, #14181E 75%);
+  background: linear-gradient(90deg, #14181E 25%, #1F2937 50%, #14181E 75%);
   background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
 }
