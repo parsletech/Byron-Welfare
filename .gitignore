@@ -9,7 +9,6 @@ lerna-debug.log*
 
 # Node modules
 node_modules
-dist
 dist-ssr
 *.local
 
@@ -32,3 +31,6 @@ dist-ssr
 *.zip
 scratch_*
 .vite
+
+dist
+
